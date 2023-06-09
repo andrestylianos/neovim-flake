@@ -7,4 +7,7 @@ with pkgs.vimPlugins; [
   cmp-path
   cmp-cmdline
   nvim-cmp
+  cmp-nvim-lsp-signature-help
+  luasnip
+  cmp_luasnip
 ]

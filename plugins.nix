@@ -10,4 +10,6 @@ with pkgs.vimPlugins; [
   cmp-nvim-lsp-signature-help
   luasnip
   cmp_luasnip
+
+  lualine-nvim
 ]

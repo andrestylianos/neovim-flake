@@ -12,4 +12,6 @@ with pkgs.vimPlugins; [
   cmp_luasnip
 
   lualine-nvim
+
+  nvim-treesitter.withAllGrammars
 ]

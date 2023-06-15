@@ -1,20 +1,18 @@
 { pkgs, lib }:
 let
-  scripts2ConfigFiles = dir:
-    let
-      configDir = pkgs.stdenv.mkDerivation {
-        name = "nvim-${dir}-configs";
-        src = ./${dir};
+  configDir = lang: pkgs.stdenv.mkDerivation {
+        name = "nvim-${lang}-configs";
+        src = ./${lang};
         installPhase = ''
-          mkdir -p $out/
-          cp -r ./* $out/
+          mkdir -p $out/lua/
+          cp -r ./* $out/lua/
         '';
       };
-    in lib.filesystem.listFilesRecursive configDir;
 
-  sourceConfigFiles = files:
-    builtins.concatStringsSep "\n" (builtins.map (file:
-      "luafile ${file}") files);
+  sourceConfigFiles = dir: ''
+  set runtimepath+=${dir}
+  luafile ${dir}/lua/init.lua
+  '';
 
-  lua = scripts2ConfigFiles "lua";
+  lua = configDir "lua";
 in sourceConfigFiles lua

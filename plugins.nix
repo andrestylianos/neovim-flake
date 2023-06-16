@@ -13,5 +13,13 @@ with pkgs.vimPlugins; [
 
   lualine-nvim
 
+  nvim-spectre
+  which-key-nvim
+  legendary-nvim
+  dressing-nvim
+
+  # themes
+  onedark-nvim
+
   nvim-treesitter.withAllGrammars
 ]

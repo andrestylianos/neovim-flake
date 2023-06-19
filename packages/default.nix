@@ -1,7 +1,11 @@
-{ pkgs, lib, runtimeDeps, nvim-lsp-notify }:
-let
-  customRC = import ../config { inherit pkgs lib; };
-  plugins = import ../plugins.nix { inherit pkgs nvim-lsp-notify; };
+{
+  pkgs,
+  lib,
+  runtimeDeps,
+  nvim-lsp-notify,
+}: let
+  customRC = import ../config {inherit pkgs lib;};
+  plugins = import ../plugins.nix {inherit pkgs nvim-lsp-notify;};
   neovimRuntimeDependencies = pkgs.symlinkJoin {
     name = "neovimRuntimeDependencies";
     paths = runtimeDeps;
@@ -20,10 +24,10 @@ let
     };
   };
 in
-pkgs.writeShellApplication {
-  name = "nvim";
-  runtimeInputs = [ neovimRuntimeDependencies ];
-  text = ''
-    ${neovimUnwrapped}/bin/nvim "$@"
-  '';
-}
+  pkgs.writeShellApplication {
+    name = "nvim";
+    runtimeInputs = [neovimRuntimeDependencies];
+    text = ''
+      ${neovimUnwrapped}/bin/nvim "$@"
+    '';
+  }

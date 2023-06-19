@@ -1,0 +1,9 @@
+[*.lua]
+
+indent_style = space
+indent_size = 4
+tab_width = 4
+quote_style = single
+
+insert_final_newline = true
+align_array_table = false

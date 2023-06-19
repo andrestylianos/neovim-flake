@@ -46,6 +46,7 @@
       overlays = [overlayFlakeInputs overlayDefaultNeovim];
     };
   in {
+    formatter.x86_64-linux = pkgs.alejandra;
     packages.x86_64-linux.default = finalPkgs.defaultNeovim;
     apps.x86_64-linux.default = {
       type = "app";

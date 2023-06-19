@@ -4,6 +4,8 @@ local M = {}
 
 M.config = function ()
         telescope.setup({})
+        telescope.load_extension('fzf')
+        telescope.load_extension("notify")
         local legendary = require("legendary")
         local telescope_builtin = require("telescope.builtin")
         local wk = require("which-key")
@@ -27,6 +29,7 @@ M.config = function ()
 
                 { '<leader>sd', '<cmd>Telescope diagnostics bufnr=0<cr>', desc = 'Search: Diagnostics' },
                 { '<leader>sh', telescope_builtin.help_tags, desc = 'Search: Help tags' },
+                { '<leader>sn', telescope.extensions.notify.notify, desc = 'Search: Notifications' },
                 { '<leader>so', telescope_builtin.vim_options, desc = 'Search: Options' },
                 { '<leader>st', telescope_builtin.treesitter, desc = 'Search: Treesitter' },
                 { '<leader>s/', telescope_builtin.live_grep, desc = 'Search: Search History' },

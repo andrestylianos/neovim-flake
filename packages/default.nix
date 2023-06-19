@@ -1,7 +1,7 @@
-{ pkgs, lib, runtimeDeps }:
+{ pkgs, lib, runtimeDeps, nvim-lsp-notify }:
 let
   customRC = import ../config { inherit pkgs lib; };
-  plugins = import ../plugins.nix { inherit pkgs; };
+  plugins = import ../plugins.nix { inherit pkgs nvim-lsp-notify; };
   neovimRuntimeDependencies = pkgs.symlinkJoin {
     name = "neovimRuntimeDependencies";
     paths = runtimeDeps;

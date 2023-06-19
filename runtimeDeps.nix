@@ -1,7 +1,11 @@
-{ pkgs }:
+{pkgs}:
 with pkgs; [
   lazygit
+  fd
+
+  # nix
   nixd
+  alejandra
 
   # lua
   lua-language-server

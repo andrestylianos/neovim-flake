@@ -45,4 +45,7 @@ in
     nvim-treesitter.withAllGrammars
     nvim-treesitter-textobjects
     playground
+
+    # clojure
+    conjure
   ]

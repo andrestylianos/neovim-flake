@@ -13,48 +13,52 @@
       url = "github:mrded/nvim-lsp-notify";
       flake = false;
     };
+
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
-  outputs = {
-    self,
-    nixpkgs,
-    neovim,
-    nixd,
-    nvim-lsp-notify,
-  }: let
-    overlayFlakeInputs = prev: final: {
-      neovim = neovim.packages.x86_64-linux.neovim;
-    };
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
 
-    pkgs = import nixpkgs {
-      system = "x86_64-linux";
-      overlays = [overlayFlakeInputs nixd.overlays.default];
-    };
+      perSystem = {system, ...}: let
+        overlayFlakeInputs = prev: final: {
+          neovim = inputs.neovim.packages.${prev.stdenv.hostPlatform.system}.neovim;
+        };
 
-    dependencies = import ./runtimeDeps.nix {inherit pkgs;};
+        pkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [overlayFlakeInputs inputs.nixd.overlays.default];
+        };
 
-    overlayDefaultNeovim = prev: final: {
-      defaultNeovim = import ./packages/default.nix {
-        pkgs = final;
-        lib = nixpkgs.lib;
-        runtimeDeps = dependencies;
-        nvim-lsp-notify = nvim-lsp-notify;
+        dependencies = import ./runtimeDeps.nix {inherit pkgs;};
+
+        overlayDefaultNeovim = prev: final: {
+          defaultNeovim = import ./packages/default.nix {
+            pkgs = final;
+            lib = inputs.nixpkgs.lib;
+            runtimeDeps = dependencies;
+            nvim-lsp-notify = inputs.nvim-lsp-notify;
+          };
+        };
+
+        finalPkgs = import inputs.nixpkgs {
+          inherit system;
+          overlays = [overlayFlakeInputs overlayDefaultNeovim];
+        };
+      in {
+        formatter = pkgs.alejandra;
+        packages.default = finalPkgs.defaultNeovim;
+        apps.default = {
+          type = "app";
+          program = "${finalPkgs.defaultNeovim}/bin/nvim";
+        };
+
+        devShells.default = finalPkgs.mkShell {
+          buildInputs = with finalPkgs; [defaultNeovim] ++ dependencies;
+        };
       };
     };
-
-    finalPkgs = import nixpkgs {
-      system = "x86_64-linux";
-      overlays = [overlayFlakeInputs overlayDefaultNeovim];
-    };
-  in {
-    formatter.x86_64-linux = pkgs.alejandra;
-    packages.x86_64-linux.default = finalPkgs.defaultNeovim;
-    apps.x86_64-linux.default = {
-      type = "app";
-      program = "${finalPkgs.defaultNeovim}/bin/nvim";
-    };
-
-    devShells.x86_64-linux.default = finalPkgs.mkShell {
-      buildInputs = with finalPkgs; [defaultNeovim] ++ dependencies;
-    };
-  };
 }

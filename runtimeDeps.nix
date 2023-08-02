@@ -2,6 +2,8 @@
 with pkgs; [
   lazygit
   fd
+  ripgrep
+  gnused
 
   # nix
   nixd

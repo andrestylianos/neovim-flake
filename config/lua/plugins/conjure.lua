@@ -4,8 +4,6 @@ M.config = function()
     local eval = require('conjure.eval')
     local extract = require('conjure.extract')
 
-    vim.g['conjure#client#clojure#nrepl#test#runner'] = 'kaocha'
-
     local function conjure_eval(form)
         return eval['eval-str']({ code = form, origin = 'custom_command' })
     end

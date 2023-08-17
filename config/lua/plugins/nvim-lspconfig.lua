@@ -82,7 +82,9 @@ M.config = function()
             { '<leader>ct', telescope_builtin.lsp_type_definitions, desc = 'LSP: List Type Definitions', opts = opts },
         })
         local keymaps = {
+            ['<leader>w'] = { name = '+window/workspace' }
             ['<leader>c'] = { name = '+code' }
+            ['<leader>cc'] = { name = '+calls' }
         }
         wk.register(keymaps, opts)
     end

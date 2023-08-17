@@ -1,10 +1,14 @@
 {
   pkgs,
-  nvim-lsp-notify,
+  inputs,
 }: let
   nvim-lsp-notify-plugin = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-lsp-notify";
-    src = nvim-lsp-notify;
+    src = inputs.nvim-lsp-notify;
+  };
+  flash-nvim = pkgs.vimUtils.buildVimPlugin {
+    name = "flash.nvim";
+    src = inputs.flash-nvim;
   };
 in
   with pkgs.vimPlugins; [
@@ -48,6 +52,7 @@ in
     # nvim-paredit
     # sandwich?
     # hop, leap, etc?
+    flash-nvim
 
     # Editing
     nvim-surround

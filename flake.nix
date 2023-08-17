@@ -14,6 +14,11 @@
       flake = false;
     };
 
+    flash-nvim = {
+      url = "github:folke/flash.nvim";
+      flake = false;
+    };
+
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
   outputs = inputs @ {flake-parts, ...}:
@@ -40,7 +45,7 @@
             pkgs = final;
             lib = inputs.nixpkgs.lib;
             runtimeDeps = dependencies;
-            nvim-lsp-notify = inputs.nvim-lsp-notify;
+            inherit inputs;
           };
         };
 

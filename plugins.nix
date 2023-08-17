@@ -33,6 +33,9 @@ in
     legendary-nvim
     dressing-nvim
 
+    # git
+    gitsigns-nvim
+
     # themes
     onedark-nvim
 
@@ -40,6 +43,14 @@ in
     vim-sexp
     vim-sexp-mappings-for-regular-people
     vim-repeat
+    
+# ADD
+    # nvim-paredit
+    # sandwich?
+    # hop, leap, etc?
+
+    # Editing
+    nvim-surround
 
     # treesitter
     nvim-treesitter.withAllGrammars

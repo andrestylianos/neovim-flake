@@ -50,11 +50,7 @@ in
     # paredit
     nvim-paredit
     vim-repeat
-    
-# ADD
-    # nvim-paredit
-    # sandwich?
-    # hop, leap, etc?
+
     flash-nvim
 
     # Editing

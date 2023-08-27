@@ -19,7 +19,7 @@
       flake = false;
     };
 
-nvim-paredit = {
+    nvim-paredit = {
       url = "github:julienvincent/nvim-paredit";
       flake = false;
     };

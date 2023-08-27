@@ -19,6 +19,11 @@
       flake = false;
     };
 
+nvim-paredit = {
+      url = "github:julienvincent/nvim-paredit";
+      flake = false;
+    };
+
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
   outputs = inputs @ {flake-parts, ...}:

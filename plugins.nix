@@ -10,6 +10,10 @@
     name = "flash.nvim";
     src = inputs.flash-nvim;
   };
+  nvim-paredit = pkgs.vimUtils.buildVimPlugin {
+    name = "nvim-paredit";
+    src = inputs.nvim-paredit;
+  };
 in
   with pkgs.vimPlugins; [
     # ui
@@ -43,9 +47,8 @@ in
     # themes
     onedark-nvim
 
-    # sexp
-    vim-sexp
-    vim-sexp-mappings-for-regular-people
+    # paredit
+    nvim-paredit
     vim-repeat
     
 # ADD

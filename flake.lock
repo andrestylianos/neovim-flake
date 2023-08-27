@@ -193,6 +193,22 @@
         "type": "github"
       }
     },
+    "nvim-paredit": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1692545917,
+        "narHash": "sha256-U506ZfxW3jNX4PNXegRM/xMb8G8vuP1Gc72Odzi8s9o=",
+        "owner": "julienvincent",
+        "repo": "nvim-paredit",
+        "rev": "b03534cdf358b9ef86b7ad6a7385002e6348c879",
+        "type": "github"
+      },
+      "original": {
+        "owner": "julienvincent",
+        "repo": "nvim-paredit",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -200,7 +216,8 @@
         "neovim": "neovim",
         "nixd": "nixd",
         "nixpkgs": "nixpkgs_2",
-        "nvim-lsp-notify": "nvim-lsp-notify"
+        "nvim-lsp-notify": "nvim-lsp-notify",
+        "nvim-paredit": "nvim-paredit"
       }
     }
   },

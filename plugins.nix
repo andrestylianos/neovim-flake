@@ -22,6 +22,7 @@ in
     telescope-fzf-native-nvim
 
     marks-nvim
+    vim-bbye
 
     # lsp
     nvim-lspconfig

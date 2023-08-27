@@ -16,6 +16,9 @@ M.config = function()
         ['<leader>s'] = { name = '+search' }
     }
     legendary.keymaps({
+        -- TODO move this somewhere else
+        { '<C-c>', ':Bdelete <CR>', desc = 'Buffer delete' },
+        { '<C-d>', ':Bwipeout <CR>', desc = 'Buffer wipeout' },
         { '<leader>fb', telescope_builtin.buffers, desc = 'Find: Buffers' },
         { '<leader>ff', telescope_builtin.find_files, description = 'Find: Files' },
         { '<leader>fF', telescope_builtin.find_files, description = 'Find: Files (cwd)', { cwd = false } },

@@ -21,6 +21,8 @@ in
     telescope-nvim
     telescope-fzf-native-nvim
 
+    marks-nvim
+
     # lsp
     nvim-lspconfig
     cmp-nvim-lsp

@@ -23,6 +23,7 @@ in
 
     marks-nvim
     vim-bbye
+    nvim-autopairs
 
     # lsp
     nvim-lspconfig

@@ -5,7 +5,12 @@ local M = {}
 M.config = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
-    wk.setup()
+    wk.setup({
+        operators = {
+            gc = 'Comments',
+            ys = 'Surrond add',
+        },
+    })
 end
 
 return M

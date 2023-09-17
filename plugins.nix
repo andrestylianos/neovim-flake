@@ -2,10 +2,6 @@
   pkgs,
   inputs,
 }: let
-  nvim-lsp-notify-plugin = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-lsp-notify";
-    src = inputs.nvim-lsp-notify;
-  };
   flash-nvim = pkgs.vimUtils.buildVimPlugin {
     name = "flash.nvim";
     src = inputs.flash-nvim;
@@ -18,8 +14,14 @@ in
   with pkgs.vimPlugins; [
     # ui
     nvim-notify
+    nui-nvim
+    noice-nvim
     telescope-nvim
     telescope-fzf-native-nvim
+    todo-comments-nvim
+    vim-illuminate
+    nvim-web-devicons
+    edgy-nvim
 
     marks-nvim
     vim-bbye
@@ -28,7 +30,7 @@ in
     # lsp
     nvim-lspconfig
     cmp-nvim-lsp
-    nvim-lsp-notify-plugin
+    lspsaga-nvim
 
     cmp-buffer
     cmp-path
@@ -59,6 +61,7 @@ in
 
     # Editing
     nvim-surround
+    comment-nvim
 
     # treesitter
     nvim-treesitter.withAllGrammars

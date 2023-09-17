@@ -9,10 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixd.url = "github:nix-community/nixd";
-    nvim-lsp-notify = {
-      url = "github:mrded/nvim-lsp-notify";
-      flake = false;
-    };
 
     flash-nvim = {
       url = "github:folke/flash.nvim";

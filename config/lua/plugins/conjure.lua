@@ -4,6 +4,12 @@ M.config = function()
     local eval = require('conjure.eval')
     local extract = require('conjure.extract')
 
+    vim.g['conjure#log#wrap'] = true
+    vim.g['conjure#client#clojure#nrepl#test#runner'] = 'kaocha'
+    -- vim.g['conjure#client#clojure#nrepl#refresh#before'] = 'mount.core/stop'
+    -- vim.g['conjure#client#clojure#nrepl#refresh#after'] = 'mount.core/start'
+    vim.g['conjure#client#clojure#nrepl#refresh#dirs'] = { 'src', 'test' }
+
     local function conjure_eval(form)
         return eval['eval-str']({ code = form, origin = 'custom_command' })
     end

@@ -4,7 +4,7 @@ M.config = function()
     vim.g.mapleader = ' '
     vim.g.maplocalleader = ','
 
-    vim.cmd.colorscheme('onedark')
+    vim.cmd.colorscheme('rose-pine')
 
     local opt = vim.opt
 

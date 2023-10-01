@@ -1,3 +1,4 @@
+require('plugins.themes').config()
 require('config.options').config()
 require('config.keymaps').config()
 require('config.autocmds').config()

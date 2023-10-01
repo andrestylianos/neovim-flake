@@ -67,6 +67,22 @@
         "type": "github"
       }
     },
+    "github-nvim-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1695464741,
+        "narHash": "sha256-v+tFr2/fbEk8l5LTn5JiFxErhmgsmETskLvL1+H7zTs=",
+        "owner": "projekt0n",
+        "repo": "github-nvim-theme",
+        "rev": "48f95f763e1a98e508260a20e448c3ff2d91213a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "projekt0n",
+        "repo": "github-nvim-theme",
+        "type": "github"
+      }
+    },
     "neovim": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -197,6 +213,7 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "flash-nvim": "flash-nvim",
+        "github-nvim-theme": "github-nvim-theme",
         "neovim": "neovim",
         "nixd": "nixd",
         "nixpkgs": "nixpkgs_2",

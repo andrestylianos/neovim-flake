@@ -10,6 +10,10 @@
     name = "nvim-paredit";
     src = inputs.nvim-paredit;
   };
+  github-nvim-theme = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "github-nvim-theme";
+    src = inputs.github-nvim-theme;
+  };
 in
   with pkgs.vimPlugins; [
     # ui
@@ -52,6 +56,11 @@ in
 
     # themes
     onedark-nvim
+    kanagawa-nvim
+    tokyonight-nvim
+    github-nvim-theme
+    catppuccin-nvim
+    rose-pine
 
     # paredit
     nvim-paredit

@@ -15,6 +15,11 @@
       flake = false;
     };
 
+    github-nvim-theme = {
+      url = "github:projekt0n/github-nvim-theme";
+      flake = false;
+    };
+
     nvim-paredit = {
       url = "github:julienvincent/nvim-paredit";
       flake = false;

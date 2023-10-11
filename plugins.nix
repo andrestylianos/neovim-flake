@@ -6,9 +6,9 @@
     name = "flash.nvim";
     src = inputs.flash-nvim;
   };
-  nvim-paredit = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-paredit";
-    src = inputs.nvim-paredit;
+  nvim-treesitter-sexp = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-treesitter-sexp";
+    src = inputs.nvim-treesitter-sexp;
   };
   github-nvim-theme = pkgs.vimUtils.buildVimPluginFrom2Nix {
     name = "github-nvim-theme";
@@ -63,7 +63,7 @@ in
     rose-pine
 
     # paredit
-    nvim-paredit
+    nvim-treesitter-sexp
     vim-repeat
 
     flash-nvim

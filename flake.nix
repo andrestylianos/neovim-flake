@@ -20,8 +20,8 @@
       flake = false;
     };
 
-    nvim-paredit = {
-      url = "github:julienvincent/nvim-paredit";
+    nvim-treesitter-sexp = {
+      url = "github:PaterJason/nvim-treesitter-sexp";
       flake = false;
     };
 

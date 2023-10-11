@@ -193,19 +193,19 @@
         "type": "github"
       }
     },
-    "nvim-paredit": {
+    "nvim-treesitter-sexp": {
       "flake": false,
       "locked": {
-        "lastModified": 1692545917,
-        "narHash": "sha256-U506ZfxW3jNX4PNXegRM/xMb8G8vuP1Gc72Odzi8s9o=",
-        "owner": "julienvincent",
-        "repo": "nvim-paredit",
-        "rev": "b03534cdf358b9ef86b7ad6a7385002e6348c879",
+        "lastModified": 1695053634,
+        "narHash": "sha256-szbBBNOsn/7Kgw++qJGJXmek9m0tFWTl9grzrxKbzL4=",
+        "owner": "PaterJason",
+        "repo": "nvim-treesitter-sexp",
+        "rev": "9d46d88db97cb6271b0337e40c07b5174b1600f8",
         "type": "github"
       },
       "original": {
-        "owner": "julienvincent",
-        "repo": "nvim-paredit",
+        "owner": "PaterJason",
+        "repo": "nvim-treesitter-sexp",
         "type": "github"
       }
     },
@@ -217,7 +217,7 @@
         "neovim": "neovim",
         "nixd": "nixd",
         "nixpkgs": "nixpkgs_2",
-        "nvim-paredit": "nvim-paredit"
+        "nvim-treesitter-sexp": "nvim-treesitter-sexp"
       }
     }
   },

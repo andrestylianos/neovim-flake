@@ -1,10 +1,11 @@
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 local lspsaga = require('lspsaga')
+local lspconfig = require('lspconfig')
 
 local M = {}
 M.config = function()
     local capabilities = cmp_nvim_lsp.default_capabilities()
-    require 'lspconfig'.nixd.setup {
+    lspconfig.nixd.setup {
         capabilities = capabilities,
         settings = {
             ['nixd'] = {
@@ -14,7 +15,7 @@ M.config = function()
             }
         }
     }
-    require 'lspconfig'.lua_ls.setup {
+    lspconfig.lua_ls.setup {
         capabilities = capabilities,
         settings = {
             Lua = {
@@ -24,8 +25,15 @@ M.config = function()
             }
         }
     }
-    require 'lspconfig'.clojure_lsp.setup {
-        capabilities = capabilities
+    lspconfig.clojure_lsp.setup {
+        capabilities = capabilities,
+        init_options = {
+            ['semantic-tokens?'] = true
+        }
+    }
+
+    lspconfig.tsserver.setup {
+        capabilities = capabilities,
     }
 
     lspsaga.setup({

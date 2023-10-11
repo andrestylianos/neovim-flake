@@ -81,9 +81,9 @@ M.config = function()
             { 'gt', vim.lsp.buf.type_definition, desc = 'LSP: Type Definition', opts = opts },
             { 'K', ':Lspsaga hover_doc<CR>', desc = 'LSP: Hover', opts = opts },
             { '<C-k>', vim.lsp.buf.signature_help, desc = 'LSP: Signature Help', opts = opts },
-            { '<leader>wa', vim.lsp.buf.add_workspace_folder, desc = 'LSP: Add Workspace Folder', opts = opts },
-            { '<leader>wr', vim.lsp.buf.remove_workspace_folder, desc = 'LSP: Remove Workspace Folder', opts = opts },
-            { '<leader>wl', list_workspace_folders, desc = 'LSP: List Workspace Folders', opts = opts },
+            { '<leader>cwa', vim.lsp.buf.add_workspace_folder, desc = 'LSP: Add Workspace Folder', opts = opts },
+            { '<leader>cwr', vim.lsp.buf.remove_workspace_folder, desc = 'LSP: Remove Workspace Folder', opts = opts },
+            { '<leader>cwl', list_workspace_folders, desc = 'LSP: List Workspace Folders', opts = opts },
             { '<leader>ca', vim.lsp.buf.code_action, desc = 'LSP: Code Actions', opts = opts },
             { '<leader>cci', ':Lspsaga incoming_calls<CR>', desc = 'LSP: Incoming Calls', opts = opts },
             { '<leader>cco', ':Lspsaga outgoing_calls<CR>', desc = 'LSP: Outgoing Calls', opts = opts },
@@ -97,8 +97,8 @@ M.config = function()
             { '<leader>ct', telescope_builtin.lsp_type_definitions, desc = 'LSP: List Type Definitions', opts = opts },
         })
         local keymaps = {
-            ['<leader>w'] = { name = '+window/workspace' },
-            ['<leader>c'] = { name = '+code' },
+            ['<leader>c'] = { name = '+code/lsp' },
+            ['<leader>cw'] = { name = '+workspace' },
             ['<leader>cc'] = { name = '+calls' },
         }
         wk.register(keymaps, opts)

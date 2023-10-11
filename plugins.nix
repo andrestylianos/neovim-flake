@@ -26,6 +26,7 @@ in
     vim-illuminate
     nvim-web-devicons
     edgy-nvim
+    smart-splits-nvim
 
     marks-nvim
     vim-bbye
